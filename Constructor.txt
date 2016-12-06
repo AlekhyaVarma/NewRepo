@@ -1,0 +1,167 @@
+Constructors
+------------
+
+	The constructors are the special type of functions.special means the class and function name both are same.the constructors are they don't have any return types.these are automatically access when the u can create the class object.
+
+
+They are te four types of contructors
+---------------------------------------
+
+1) Default constructor
+
+2) Arguments constructor
+
+3) Copy constructor
+
+4) Over Load constructor
+
+
+Default constructor
+-------------------  
+
+
+package samplepack;
+
+public class Employee 
+{
+	int eno;
+	String ename;
+	double salary;
+	
+	public Employee() // default Constructor
+	{
+		eno=100;
+		ename="Raju";
+		salary=25000;
+	}
+	
+	public void DisplayDetails()
+	{
+		
+		System.out.println("Employee Number : "+eno);
+		System.out.println("Employee Name : "+ename);
+		System.out.println("Employee Salary : "+salary);
+	}
+
+	public static void main(String[] args) 
+	{
+		
+		// create the employee class object
+		Employee obj=new Employee();
+		
+		
+		// call the functions		
+		obj.DisplayDetails();
+	}
+
+}
+
+
+
+
+
+Arguments constructor
+----------------------
+
+package samplepack;
+
+public class Employee 
+{
+	int eno;
+	String ename;
+	double salary;
+	
+	public Employee(int prm_eno,String prm_ename,double prm_salary) // Arguments Constructor
+	{
+		eno=prm_eno;
+		ename=prm_ename;
+		salary=prm_salary;
+	}
+	
+	public void DisplayDetails()
+	{
+		
+		System.out.println("Employee Number : "+eno);
+		System.out.println("Employee Name : "+ename);
+		System.out.println("Employee Salary : "+salary);
+	}
+
+	public static void main(String[] args) 
+	{
+		
+		// create the employee class object
+		Employee obj=new Employee(200,"Kiran",65000);
+		
+		
+		// call the functions		
+		obj.DisplayDetails();
+	}
+
+}
+
+
+OverLoad Constructor
+--------------------
+
+
+	Sample constructor name but they having different types of arguments is know over load constructor in single class.
+
+
+package samplepack;
+
+public class Employee 
+{
+	int eno;
+	String ename;
+	double salary;
+	
+	public Employee() // default Constructor
+	{
+		eno=100;
+		ename="Raju";
+		salary=10000;
+	}
+	
+	public Employee(int prm_eno,String prm_ename,double prm_salary) // Arguments Constructor
+	{
+		eno=prm_eno;
+		ename=prm_ename;
+		salary=prm_salary;
+	}
+	
+	public Employee(Employee x) // Copy constructor 
+	{
+		eno=x.eno;
+		ename=x.ename;
+		salary=x.salary;
+	}
+	
+	public void DisplayDetails()
+	{
+		
+		System.out.println("Employee Number : "+eno);
+		System.out.println("Employee Name : "+ename);
+		System.out.println("Employee Salary : "+salary);
+	}
+
+	public static void main(String[] args) 
+	{
+		
+		// create the employee class object
+		Employee obj1=new Employee();  // default constructor 
+		Employee obj2=new Employee(200,"Kiran",65000); // Arguments constructor object
+		Employee obj3=new Employee(obj1);
+		
+		
+		
+		// call the functions		
+		obj1.DisplayDetails();
+		obj2.DisplayDetails();
+	}
+
+}
+
+
+
+
+
